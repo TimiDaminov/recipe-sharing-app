@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { db, storage } from '../firebase'; // Import Firestore and Storage
 import { collection, addDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import Storage functions
+import { Link } from 'react-router-dom';
 
 function CreateRecipe() {
   const [formData, setFormData] = useState({
@@ -211,12 +212,12 @@ function CreateRecipe() {
           >
             Add Recipe
           </button>
-          <a
-            href='/feed'
+          <Link
+            to='/feed'
             className="bg-[#DD5746] hover:bg-[#4793AF] text-white py-2 px-8 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
           >
             Back to Feed
-          </a>
+          </Link>
         </div>
       </form>
     </div>
